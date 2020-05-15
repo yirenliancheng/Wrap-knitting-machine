@@ -35,3 +35,7 @@ npm install animate.css --save
 ```
 npm install echarts --save
 ```
+### DataV install
+```
+npm install @jiaminghi/data-view
+```

@@ -25,9 +25,9 @@ export default {
       // 基于准备好的dom，初始化echarts实例
       var myChart = echarts.init(this.$refs.echarts);
       var geoCoordMap = {
-        上海:[121.4648, 31.2891],
-        北京:[116.4551, 40.2539],
-        广州:[113.5107, 23.2196],
+        上海: [121.4648, 31.2891],
+        北京: [116.4551, 40.2539],
+        广州: [113.5107, 23.2196],
         莆田: [119.2733, 24.596],
         柏林: [113.5107, 23.2196],
         华盛顿: [-77.0218, 38.537],
@@ -40,18 +40,18 @@ export default {
         悉尼: [151.124, -33.5135],
         成都: [103.9526, 30.7617],
         昆明: [102.9199, 25.4663],
-        新德里: [77.1203, 28.3620],
+        新德里: [77.1203, 28.362],
         伦敦: [0.152, 51.3025],
-        罗马: [12.296, 41.293],
+        罗马: [14.296, 41.293],
         莫斯科: [37.356, 55.456],
         巴黎: [2.2012, 48.5139],
         东京: [139.462, 35.426],
         开罗: [31.1458, 30.0353],
         旧金山: [-122.25, 37.48],
         里约热内卢: [-43.1147, -22.543],
-        开普敦: [18.2569, -33.5526],
-        渥太华:[-73.5896, 45.2016],
-        新加坡:[103.5123, 1.1859],
+        开普敦: [19.2569, -33.5526],
+        渥太华: [-73.5896, 45.2016],
+        新加坡: [103.5123, 1.1859]
       };
       var PTData = [
         [
@@ -346,7 +346,7 @@ export default {
         }
         return res;
       };
-      var color = ["#ff0033","#a6c84c","#006600", "#ffa022", "#9900ff"];
+      var color = ["rgba(255,0,0,0.6)", "rgba(0,255,0,0.6)", "rgba(122,255,255,0.6)", "rgba(255,128,0,0.6)", "rgba(255,122,122,0.6)"];
       var series1 = [];
       [
         ["莆田", PTData],
@@ -410,7 +410,9 @@ export default {
                 show: true,
                 position: "right",
                 formatter: "{b}",
-                fontSize:16,
+                fontSize: 16,
+                fontWeight:800,
+                fontFamily:"Arial, Helvetica, sans-serif",
               }
             },
             symbolSize: function(val) {
@@ -424,7 +426,10 @@ export default {
             data: item[1].map(function(dataItem) {
               return {
                 name: dataItem[1].name,
-                value: (geoCoordMap[dataItem[1].name])!=undefined? geoCoordMap[dataItem[1].name].concat([dataItem[1].value]) : 0
+                value:
+                  geoCoordMap[dataItem[1].name] != undefined
+                    ? geoCoordMap[dataItem[1].name].concat([dataItem[1].value])
+                    : 0
               };
             })
           }
@@ -432,32 +437,6 @@ export default {
       });
       // 绘制图表
       myChart.setOption({
-        // title: {
-        //   text: "The influence of HUAFENG",
-        //   left: "center",
-        //   top: "top"
-        // },
-        // tooltip: {},
-        // toolbox: {
-        //   show: true,
-        //   orient: "vertical",
-        //   left: "right",
-        //   top: "center",
-        //   feature: {
-        //     dataView: { readOnly: false },
-        //     restore: {},
-        //     saveAsImage: {}
-        //   }
-        // },
-        // visualMap: {
-        //   min: 0,
-        //   max: 10,
-        //   text: ["High", "Low"],
-        //   realtime: false,
-        //   calculable: true,
-        //   show: false,
-        //   color: ["orangered", "yellow", "lightskyblue"]
-        // },
         geo: {
           map: "world",
           label: {
@@ -465,70 +444,33 @@ export default {
               show: false
             }
           },
-          roam: true,
+          roam: false,
           itemStyle: {
             normal: {
-              areaColor: "#99ff99",
-              borderColor: "#0692a4"
+              areaColor: "rgba(0,255,255,.02)", 
+              borderColor: "#00ffff", 
+              borderWidth: 1.5,
+              shadowColor: "#00ffff",
+              shadowOffsetX: 0,
+              shadowOffsetY: 2,
+              shadowBlur: 20
             },
             emphasis: {
               areaColor: "#0b1c2d"
             }
           },
-            aspectScale: 1, //长宽比
-            left: 0,
-            top: 0,
-            right: 0,
-            bottom: 0,
-            boundingCoords: [
-              //画布设置，左上角经纬度和右下角经纬度
-              [-140, 80],
-              [160, -50]
-            ],
+          aspectScale: 1, //长宽比
+          left: 0,
+          top: 0,
+          right: 0,
+          bottom: 0,
+          boundingCoords: [
+            //画布设置，左上角经纬度和右下角经纬度
+            [-140, 80],
+            [160, -50]
+          ]
         },
-        // series: [
-        //   {
-        //     name: "The influence of HUAFENG",
-        //     type: "map",
-        //     mapType: "world",
-        //     itemStyle: {
-        //       emphasis: { label: { show: true } }
-        //     },
-        //     aspectScale: 1, //长宽比
-        //     left: 0,
-        //     top: 0,
-        //     right: 0,
-        //     bottom: 0,
-        //     boundingCoords: [
-        //       //画布设置，左上角经纬度和右下角经纬度
-        //       [-120, 80],
-        //       [150, -50]
-        //     ],
-        //     selectedMode: "single", //选中模式设置 single和multiple
-        //     label: {
-        //       show: false,
-        //       formatter: "{b}"
-        //     },
-        //     itemStyle: {
-        //       //地图区域的图形样式
-        //       areaColor: "#132937",
-        //       borderColor: "#0692a4"
-        //     },
-        //     emphasis: {
-        //       //高亮状态下的多边形和标签样式
-        //       itemStyle: {
-        //         areaColor: "yellow",
-        //         borderColor: "red"
-        //       }
-        //     },
-        //     data: [
-        //       { name: "China", value: 10 },
-        //       { name: "Germany", value: 10 },
-        //       { name: "United States", value: 10 }
-        //     ]
-        //   }
-        // ]
-        series:series1
+        series: series1
       });
     }
   },
@@ -542,4 +484,5 @@ export default {
 </script>
 
 <style scoped>
+
 </style>

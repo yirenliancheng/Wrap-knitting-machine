@@ -8,6 +8,7 @@
     "test:e2e": "vue-cli-service test:e2e"
   },
   "dependencies": {
+    "@jiaminghi/data-view": "^2.8.4",
     "animate.css": "^3.7.2",
     "core-js": "^3.6.4",
     "echarts": "^4.7.0",

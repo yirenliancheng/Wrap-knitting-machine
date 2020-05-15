@@ -4,12 +4,12 @@ import router from './router'
 import store from './store'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-import echarts from 'echarts'
+import dataV from '@jiaminghi/data-view'
 
 Vue.config.productionTip = true
 
 Vue.use(ElementUI);
-
+Vue.use(dataV);
 
 new Vue({
   router,

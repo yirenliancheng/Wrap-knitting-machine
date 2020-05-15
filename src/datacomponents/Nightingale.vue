@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <div style="height:300px;width:300px;" ref="echarts"></div>
-  </div>
+    <div style="height:320px;width:400px;" ref="echarts"></div>
 </template>
 
 <script>
@@ -49,13 +47,13 @@ export default {
               { value: 38, name: "断开" }
             ],
             roseType: "angle",
-            label: {
-            //     normal:{
+            // label: {
+            //   normal:{
             //   fontStyle:"normal",
             //   fontWeight:"bolder",
             //   fontSize:20                    
-            //     }
-            },
+            //     }    
+            // },
             labelLine: {
               normal: {
                 lineStyle: {
@@ -69,11 +67,14 @@ export default {
               formatter: "{b}<hr/>{c}台 ({d}%)"
             },
             label: {
-              alignTo: "labelLine"
+              fontSize:16,
+              // align:right,
+              // alignTo: "labelLine",
+              fontWeight:800,
             }
           }
         ],
-        color: ["green", "blue", "yellow", "red", "pink"]
+        color: ["green", "blue", "yellow", "red", "black"]
       });
     }
   },

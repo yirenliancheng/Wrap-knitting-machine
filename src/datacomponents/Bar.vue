@@ -28,42 +28,6 @@ export default {
 
       // 绘制图表
       myChart.setOption({
-        backgroundColor: "Transparent",
-        title: {
-          text: "柱状图",
-          left: "40%",
-          textStyle: {
-            color: "white"
-          }
-        },
-        tooltip: {},
-        xAxis: {
-          data: this.chartData,
-          axisLine: {
-            lineStyle: {
-              color: "white"
-            }
-          }
-        },
-        yAxis: {
-          axisLine: {
-            lineStyle: {
-              color: "white"
-            }
-          }
-        },
-        series: [
-          {
-            name: "销量",
-            type: "bar",
-            data: [5, 20, 36, 10, 10, 20]
-          },
-          {
-            name: "价格",
-            type: "bar",
-            data: [25, 15, 9, 32, 42, 26]
-          }
-        ]
       });
     }
   },
