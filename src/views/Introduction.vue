@@ -43,7 +43,7 @@ export default {
     background-color: white;
     color: #333;
     text-align: center;
-    height: 850px;
+    height: 100%;
     position:fixed;
     top:100px;
     left: 0px;
@@ -53,7 +53,7 @@ export default {
     color: #333;
     text-align: center;
     line-height: 160px;
-    height: 1080px;
+    height: 100%;
   }
   .h-container{
       position: relative;

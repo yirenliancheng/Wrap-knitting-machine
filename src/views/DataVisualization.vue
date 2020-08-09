@@ -15,7 +15,7 @@
     <Nightingale/>
     <Rader/>
     <Candlestick/>
-
+    <Bar/>
     </div>
   </el-main>
 </el-container>
@@ -29,7 +29,8 @@ import Map from "../datacomponents/Map.vue";
 import Rader from "../datacomponents/Radar.vue";
 import Candlestick from "../datacomponents/Candlestick.vue";
 import Tree from "../datacomponents/Tree.vue";
-import Information from "../datacomponents/Information.vue"
+import Information from "../datacomponents/Information.vue";
+import Bar from "../datacomponents/Bar.vue"
 
 export default {
     name:"DataVisualization",
@@ -41,7 +42,8 @@ export default {
         Rader,
         Candlestick,
         Tree,
-        Information
+        Information,
+        Bar
     },
     // data(){
     //  activeIndex2:"3",

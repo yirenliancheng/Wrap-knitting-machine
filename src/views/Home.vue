@@ -6,6 +6,7 @@
     </el-header>
     <el-main>
       <Carousel/>
+      <div class="h-hdiv"></div>
     </el-main>
     <el-footer height="200px">
       <Footer/>
@@ -57,10 +58,15 @@ export default {
   padding: 0;
   margin:0;
   position: relative;
-  top:110px;
+  top:100px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.h-hdiv{
+  width: 100%;
+  height:837px;
+  background-color: aquamarine;
 }
 
 </style>
